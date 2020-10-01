@@ -11,8 +11,8 @@ console.log(`${person.name} is ${person.age}`);
 console.log(`${firstName} is ${age}`);
 const { location, temp: temperature} = person.location;
 if(location && temperature) {
-    console.log(`it is ${person.temp} in ${person.location}`);
-    console.log(`it is ${temperature} in ${city}`);
+    console.log(`it is ${person.location.temp} in ${person.location.temp}`);
+    console.log(`it is ${temperature} in ${location}`);
 }
 
 const book = {
