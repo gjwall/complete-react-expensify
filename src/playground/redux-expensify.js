@@ -29,6 +29,13 @@ const removeExpense = (
     }
 );
 
+//EDIT_EXPENSE
+const editExpense = (id, updates) => ({
+    type: 'EDIT_EXPENSE',
+    id,
+    updates
+  });
+
 // Expenses reducer
 const expensesReducerDefaultState = [];
 const expensesReducer = (state = expensesReducerDefaultState, action) => {
@@ -40,15 +47,37 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
             ];
         case 'REMOVE_EXPENSE':
             return state.filter(( {id} ) => id !== action.expense.id);
+        case 'EDIT_EXPENSE':
+            return state.map((expense) => {
+                if(expense.id === action.id) {
+                    return {
+                        ...expense,
+                        ...action.updates
+                    }
+                } else {
+                    return expense;
+                }
+            });
         default: 
             return state;
     }
 };
 
+//SET_TEXT
+const setTextFilter = (text = '') => ({
+    type: 'SET_TEXT_FILTER',
+    text
+});
+
 // Filter reducer
 const filtersReducerDefaultState = {text: '', sortBy: 'date', startDate: undefined, endDate: undefined};
 const filterReducer = (state = filtersReducerDefaultState, action) => {
     switch(action.type) {
+        case 'SET_TEXT_FILTER':
+            return {
+                ...state, 
+                text: action.text
+            }           
         default: 
             return state;
     }
@@ -68,9 +97,14 @@ store.subscribe(() => {
 
 const expenseOne = store.dispatch(AddExpense( {description: 'rent', amount: 100 }));
 //console.log('One', expenseOne);
-const expenseTwo = store.dispatch(AddExpense( {description: 'Cofee', amount: 300 }));
+const expenseTwo = store.dispatch(AddExpense( {description: 'Coffee', amount: 300 }));
 //console.log('Two', expenseTwo);
 store.dispatch(removeExpense( {id: expenseOne.expense.id }));
+
+store.dispatch(editExpense( expenseTwo.expense.id, {amount: 500} ));
+
+store.dispatch(setTextFilter('rent'));
+store.dispatch(setTextFilter(''));
 
 const demoState = {
     expenses: [{
@@ -87,3 +121,14 @@ const demoState = {
         endDate: undefined
     }  
 };
+
+const user = {
+    name: 'Jen',
+    age: 50
+};
+
+console.log({ age: 5, 
+            ...user, 
+            location:'here', 
+            age: 10 
+});
