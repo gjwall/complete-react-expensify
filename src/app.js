@@ -9,12 +9,6 @@ import 'normalize.css';
 import './styles/styles.scss';
 
 const store = configureStore();
-//console.log(store.getState());
-
-// add expense (water bill)
-// add expense (gas bill)
-// settext -> bill (2 items) -> water (1 item)
-// get visible expenses -> print to screen
 
 store.subscribe(() => {
     const state = store.getState();
