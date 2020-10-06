@@ -17,14 +17,14 @@ store.subscribe(() => {
     console.log(visibleExpenses);
 });
 
-store.dispatch(addExpense( { description: 'water bill' } ));
+store.dispatch(addExpense( { description: 'water bill', amount: 4500 } ));
 store.dispatch(addExpense( { description: 'gas bill' } ));
 store.dispatch(setTextFilter('bill'));
 store.dispatch(setTextFilter('water'));
 
 setTimeout(() => {
-    store.dispatch(setTextFilter('rent'));
-}, 3000)
+    store.dispatch(setTextFilter('bill'));
+}, 3000);
 
 // This sets up a provider that passes a store into all of our components
 const jsx = (
