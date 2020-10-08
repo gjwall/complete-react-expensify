@@ -7,13 +7,13 @@ export const setTextFilter = (text = '') => ({
 //SORT_BY_AMOUNT_FILTER
 export const sortByAmount = () => ({
     type: 'SORT_BY_AMOUNT_FILTER',
-    sortBy: 'Amount'
+    sortBy: 'amount'
 });
 
 // SORT_BY_DATE_FILTER
 export const sortByDate = () => ({
     type: 'SORT_BY_DATE_FILTER',
-    sortBy: 'Date'
+    sortBy: 'date'
 });
 
 //SET_START_DATE
