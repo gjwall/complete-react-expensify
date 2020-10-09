@@ -17,7 +17,7 @@ store.subscribe(() => {
 });
 
 store.dispatch(addExpense( { description: 'water bill', amount: 4500 } ));
-store.dispatch(addExpense( { description: 'gas bill', createdAt: 1000 } ));
+store.dispatch(addExpense( { description: 'gas bill', createdAt: 10000 } ));
 store.dispatch(addExpense( { description: 'rent', amount: 10095 } ));
 
 // This sets up a provider that passes a store into all of our components
