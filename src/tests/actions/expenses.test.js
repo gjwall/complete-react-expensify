@@ -1,4 +1,3 @@
-import { TestScheduler } from 'jest';
 import {addExpense, removeExpense, editExpense} from './../../actions/expenses';
 //npm run test -- --watch
 
