@@ -25,7 +25,7 @@ test('should generate sort by amount action object', () => {
         type: 'SORT_BY_AMOUNT_FILTER',
         sortBy: 'amount'
     });
-});
+}); 
 
 test('should generate sort by date action object', () => {
     const action = sortByDate();
