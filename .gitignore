@@ -2,3 +2,4 @@ node_modules/
 public/bundle.js
 public/images/favicon.png
 .vscode/
+src/tests/components/__snapshots__
