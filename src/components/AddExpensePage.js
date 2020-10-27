@@ -6,7 +6,7 @@ import {addExpense} from '../actions/expenses';
 // A class based component avoids inline functions
 export class AddExpensePage extends React.Component {
     onSubmit = (expense) => {
-        this.props.onSubmit(expense);
+        this.props.addExpense(expense);
         this.props.history.push('/');
     };
     render() {
@@ -23,7 +23,7 @@ export class AddExpensePage extends React.Component {
 
 // This function defines various props that call dispatch under the hood
 const mapDispatchToProps = (dispatch) => ({
-        onSubmit: (expense) => dispatchEvent(addExpense(expense))
+        addExpense: (expense) => dispatchEvent(addExpense(expense))
 });
 
 export default connect(undefined, mapDispatchToProps)(AddExpensePage);
