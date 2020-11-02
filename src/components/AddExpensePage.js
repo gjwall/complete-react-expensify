@@ -23,7 +23,7 @@ export class AddExpensePage extends React.Component {
 
 // This function defines various props that call dispatch under the hood
 const mapDispatchToProps = (dispatch) => ({
-        addExpense: (expense) => dispatchEvent(addExpense(expense))
+        addExpense: (expense) => dispatch(addExpense(expense))
 });
 
 export default connect(undefined, mapDispatchToProps)(AddExpensePage);
