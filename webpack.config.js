@@ -1,10 +1,12 @@
 // entry point and output bundle
 // https://webpack.js.org/concepts/#entry
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env) => {
 
     const isProduction = env === 'production';
+    //const CSSExtract = new MiniCssExtractPlugin();
 
     return {
         entry: './src/app.js',
@@ -24,16 +26,31 @@ module.exports = (env) => {
                 test: /\.s?(a|c)ss$/i, 
                 use: [  
                     // Creates `style` nodes from JS strings
-                    'style-loader',
+                    //'style-loader',
+                    // New plugin loader
+                    MiniCssExtractPlugin.loader,
                     // Translates CSS into CommonJS  
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    },
                     // Compiles Sass to CSS
-                    'sass-loader'
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }
                 ],
                 exclude: /\.module.(s(a|c)ss)$/
             }]
         },
-        devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',
+        plugins: [
+            new MiniCssExtractPlugin()
+        ],
+        devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
             contentBase: path.join(__dirname, 'public'),
             // Make index.html be served for all end points, prevents 404s
