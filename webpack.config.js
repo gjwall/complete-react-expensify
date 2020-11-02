@@ -25,8 +25,6 @@ module.exports = (env) => {
                 // Make sure the file ends in .scss or .css
                 test: /\.s?(a|c)ss$/i, 
                 use: [  
-                    // Creates `style` nodes from JS strings
-                    //'style-loader',
                     // New plugin loader
                     MiniCssExtractPlugin.loader,
                     // Translates CSS into CommonJS  
@@ -50,7 +48,7 @@ module.exports = (env) => {
         plugins: [
             new MiniCssExtractPlugin()
         ],
-        devtool: isProduction ? 'source-map' : 'inline-source-map',
+        devtool: isProduction ? 'source-map' : 'source-map',
         devServer: {
             contentBase: path.join(__dirname, 'public'),
             // Make index.html be served for all end points, prevents 404s
