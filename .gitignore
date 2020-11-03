@@ -1,7 +1,8 @@
 node_modules/
 public/bundle.js
+public/bundle.js.map
 public/main.css
-public/*.map
+public/main.css.map
 public/images/favicon.png
 .vscode/
 src/tests/components/__snapshots__
