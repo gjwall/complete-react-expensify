@@ -9,7 +9,7 @@ test('should return 0 if no expenses', () => {
 });
 
 test('should correctly add up a single expense', () => {
-    const expected = 195;
+    const expected = expenses[0].amount;
     const result = selectExpensesTotal(expenses[0]);
     expect(result).toBe(expected);
 });
