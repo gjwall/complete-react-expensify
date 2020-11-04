@@ -7,7 +7,7 @@ test('should return 0 if no expenses', () => {
     expect(result).toBe(expected);
 });
 
-// Pass in an array of one expense
+// Pass in an array of one
 test('should correctly add up a single expense', () => {
     const expected = expenses[0].amount;
     const result = selectExpensesTotal([expenses[0]]);
