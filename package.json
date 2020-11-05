@@ -23,6 +23,7 @@
   "homepage": "https://github.com/gjwall/complete-react-expensify#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "firebase": "^8.0.0",
     "mini-css-extract-plugin": "^1.2.1",
     "moment": "^2.29.1",
     "node-sass": "^4.14.1",

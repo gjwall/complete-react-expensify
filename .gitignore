@@ -3,3 +3,4 @@ public/dist/
 public/images/favicon.png
 .vscode/
 src/tests/components/__snapshots__
+src/firebase/*
