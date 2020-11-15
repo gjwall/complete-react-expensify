@@ -3,5 +3,6 @@ public/dist/
 public/images/favicon.png
 .vscode/
 src/tests/components/__snapshots__
-src/firebase/*
 src/playground/firebase.js
+.env.development
+.env.test
