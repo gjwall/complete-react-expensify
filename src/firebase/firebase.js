@@ -3,6 +3,10 @@ import 'firebase/database'; // If using Firebase database
 import 'firebase/storage';  // If using Firebase storage
 //require("firebase/firestore");
 
+// heroku config:set KEY=VALUE (can do multiple on one line)
+// heroku config:unset KEY
+// heroku config
+
 const firebaseConfig = {
     apiKey:process.env.FIREBASE_API_KEY,
     authDomain: process.env.FIREBASE_AUTH_DOMAIN,
