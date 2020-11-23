@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/database'; // If using Firebase database
 import 'firebase/storage';  // If using Firebase storage
+import 'firebase/auth';
 //require("firebase/firestore");
 
 // heroku config:set KEY=VALUE (can do multiple on one line)
@@ -23,4 +24,6 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-export { firebase, database as default };
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+export { firebase, googleAuthProvider, database as default };
