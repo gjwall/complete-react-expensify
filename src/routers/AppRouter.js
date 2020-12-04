@@ -13,11 +13,7 @@ import NotFoundPage from './../components/NotFoundPage';
 // see https://stackoverflow.com/questions/40483942/react-router-cannot-resolve-module-history-missing-lib-folder
 export const history = createHistory(); 
 
-const AppRouter = () => {
-    console.log('history', history);
-    console.log('location', history.location);
-    //console.log('path', path);
-    return (
+const AppRouter = () => (
     <Router history={history}>
         <div>
             <Header />
@@ -32,6 +28,6 @@ const AppRouter = () => {
             </Switch>
         </div>
     </Router>
-)};
+);
 
 export default AppRouter;
