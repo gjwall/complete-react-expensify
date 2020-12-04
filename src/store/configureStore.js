@@ -1,7 +1,8 @@
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
+import thunk from 'redux-thunk';
 import expensesReducer from './../reducers/expenses';
 import filterReducer from './../reducers/filters';
-import thunk from 'redux-thunk';
+import authReducer from './../reducers/auth';
 
 // https://github.com/zalmoxisus/redux-devtools-extension
 // const store = createStore(
@@ -15,7 +16,8 @@ export default () => {
     const store = createStore(
         combineReducers({
             expenses: expensesReducer,
-            filters: filterReducer
+            filters: filterReducer,
+            auth: authReducer
         }),
         // Without using the devtools middleware, just add the next line
         //applyMiddleware(thunk)
