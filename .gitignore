@@ -1,6 +1,5 @@
 node_modules/
 public/dist/
-public/images/favicon.png
 .vscode/
 src/tests/components/__snapshots__
 src/playground/firebase.js

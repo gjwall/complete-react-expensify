@@ -54,6 +54,10 @@ module.exports = (env) => {
                     }
                 ],
                 exclude: /\.module.(s(a|c)ss)$/
+            }, {
+                // This is required to load the images
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'url-loader'
             }]
         },
         plugins: [
